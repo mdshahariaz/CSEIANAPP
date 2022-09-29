@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "135376498622",
+    "project_id": "cseianapp",
+    "storage_bucket": "cseianapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135376498622:android:6795e1a35aa57d1aa713ef",
+        "android_client_info": {
+          "package_name": "cseian.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135376498622-bucqggdnira9ohrtee51tm05e7e6hdt9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeqmGN-TMBhA3M0ZcI9sKR7JGCFOPWcbQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135376498622-bucqggdnira9ohrtee51tm05e7e6hdt9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
