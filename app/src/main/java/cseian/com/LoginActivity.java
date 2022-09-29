@@ -38,18 +38,6 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        authStateListener=new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user=mAuth.getCurrentUser();
-                if (user!=null){
-                    Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        };
-
         question = findViewById(R.id.loginPageQuestion);
         emailEd = findViewById(R.id.loginEmail);
         passworded = findViewById(R.id.loginPassword);

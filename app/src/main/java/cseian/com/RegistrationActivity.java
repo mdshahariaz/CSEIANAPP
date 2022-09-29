@@ -42,7 +42,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private Button registerButton;
     private TextView question;
 
-    private FirebaseAuth mAuth;
+
     private DatabaseReference reference;
     private ProgressDialog loader;
     private String onlineUserID = "";
@@ -60,7 +60,7 @@ public class RegistrationActivity extends AppCompatActivity {
         registerButton = findViewById(R.id.RegisterBtn);
         question = findViewById(R.id.regPageQuestion);
 
-        mAuth = FirebaseAuth.getInstance();
+
         loader = new ProgressDialog(this);
 
         profileImage.setOnClickListener(new View.OnClickListener() {
@@ -99,82 +99,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
 
-                    mAuth.createUserWithEmailAndPassword(emailText,passwordText).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful()) {
-                                Toast.makeText(RegistrationActivity.this, "Registration failed " + task.getException().toString(), Toast.LENGTH_SHORT).show();
-                            }
-                            else {
-                                onlineUserID = mAuth.getCurrentUser().getUid();
-                                reference = FirebaseDatabase.getInstance().getReference().child("users").child(onlineUserID);
-                                Map hashMap = new HashMap();
-                                hashMap.put("username", userName);
-                                hashMap.put("fullname", fullName);
-                                hashMap.put("id", onlineUserID);
-                                hashMap.put("email", emailText);
-                                reference.updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
-                                    @Override
-                                    public void onComplete(@NonNull Task task) {
-                                        if (task.isSuccessful()){
-                                            Toast.makeText(RegistrationActivity.this, "Details set Successfully", Toast.LENGTH_SHORT).show();
-                                        }else {
-                                            Toast.makeText(RegistrationActivity.this, "Failed to upload data " + task.getException().toString(), Toast.LENGTH_SHORT).show();
-                                        }
 
-                                        finish();
-                                        loader.dismiss();
-                                    }
-                                });
-                                final StorageReference filePath = FirebaseStorage.getInstance().getReference().child("profile images").child(onlineUserID);
-                                Bitmap bitmap = null;
-                                try {
-                                    bitmap = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(), resultUri);
-                                }catch (IOException e){
-                                    e.printStackTrace();
-                                }
-
-                                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                                bitmap.compress(Bitmap.CompressFormat.JPEG, 20,byteArrayOutputStream);
-                                byte[] data = byteArrayOutputStream.toByteArray();
-                                UploadTask uploadTask = filePath.putBytes(data);
-
-                                uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                    @Override
-                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                        if (taskSnapshot.getMetadata().getReference() !=null){
-                                            Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
-                                            result.addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                                @Override
-                                                public void onSuccess(Uri uri) {
-                                                    String imageUrl = uri.toString();
-                                                    Map hashMap = new HashMap();
-                                                    hashMap.put("profileimageurl", imageUrl);
-                                                    reference.updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
-                                                        @Override
-                                                        public void onComplete(@NonNull Task task) {
-                                                            if (task.isSuccessful()){
-                                                                Toast.makeText(RegistrationActivity.this, "Profile Image added successfully", Toast.LENGTH_SHORT).show();
-                                                            }else {
-                                                                Toast.makeText(RegistrationActivity.this, "Process failed "+ task.getException().toString(), Toast.LENGTH_SHORT).show();
-                                                            }
-                                                        }
-                                                    });
-                                                    finish();
-                                                }
-                                            });
-                                        }
-                                    }
-                                });
-
-                                Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-                                startActivity(intent);
-                                finish();
-                                loader.dismiss();
-
-                            }
-                        }
-                    });
                 }
             }
         });
