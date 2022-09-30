@@ -17,6 +17,17 @@
         <entry key="..\:/Android App/New folder/CSEIANAPP/app/src/main/res/layout/nav_header.xml" value="0.1841880341880342" />
         <entry key="..\:/Android App/New folder/CSEIANAPP/app/src/main/res/layout/questions_retrived_layout.xml" value="0.1841880341880342" />
         <entry key="..\:/Android App/New folder/CSEIANAPP/app/src/main/res/menu/drawer_menu.xml" value="0.1841880341880342" />
+        <entry key="..\:/Users/User/Downloads/CSEIANAPP-20220929T201449Z-001/CSEIANAPP/app/src/main/res/layout/activity_ask_aquestion.xml" value="0.1" />
+        <entry key="..\:/Users/User/Downloads/CSEIANAPP-20220929T201449Z-001/CSEIANAPP/app/src/main/res/layout/activity_category_selected.xml" value="0.1" />
+        <entry key="..\:/Users/User/Downloads/CSEIANAPP-20220929T201449Z-001/CSEIANAPP/app/src/main/res/layout/activity_comments.xml" value="0.1" />
+        <entry key="..\:/Users/User/Downloads/CSEIANAPP-20220929T201449Z-001/CSEIANAPP/app/src/main/res/layout/activity_cseian_blog.xml" value="0.1" />
+        <entry key="..\:/Users/User/Downloads/CSEIANAPP-20220929T201449Z-001/CSEIANAPP/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/User/Downloads/CSEIANAPP-20220929T201449Z-001/CSEIANAPP/app/src/main/res/layout/activity_main.xml" value="0.1675213675213675" />
+        <entry key="..\:/Users/User/Downloads/CSEIANAPP-20220929T201449Z-001/CSEIANAPP/app/src/main/res/layout/activity_registration.xml" value="0.1" />
+        <entry key="..\:/Users/User/Downloads/CSEIANAPP-20220929T201449Z-001/CSEIANAPP/app/src/main/res/layout/activity_short_note.xml" value="0.1" />
+        <entry key="..\:/Users/User/Downloads/CSEIANAPP-20220929T201449Z-001/CSEIANAPP/app/src/main/res/layout/comments_layout.xml" value="0.1" />
+        <entry key="..\:/Users/User/Downloads/CSEIANAPP-20220929T201449Z-001/CSEIANAPP/app/src/main/res/layout/nav_header.xml" value="0.1" />
+        <entry key="..\:/Users/User/Downloads/CSEIANAPP-20220929T201449Z-001/CSEIANAPP/app/src/main/res/menu/drawer_menu.xml" value="0.1" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/drawable-v24/backgroundeditview.xml" value="0.154" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/drawable-v24/ic_add.xml" value="0.154" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/drawable-v24/ic_food.xml" value="0.154" />
@@ -25,7 +36,6 @@
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/drawable-v24/ic_more.xml" value="0.154" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/drawable-v24/ic_sports.xml" value="0.154" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/drawable-v24/ic_transport.xml" value="0.154" />
-        <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/drawable/ic_blog.xml" value="0.1" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/drawable/ic_comment.xml" value="0.154" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/drawable/ic_dislike.xml" value="0.154" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/drawable/ic_finance.xml" value="0.154" />
@@ -41,12 +51,11 @@
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/layout/activity_comments.xml" value="0.18426678067550234" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/layout/activity_cseian_blog.xml" value="0.1841880341880342" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/layout/activity_finance.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/layout/activity_home.xml" value="0.20761904761904762" />
+        <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/layout/activity_home.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/layout/activity_login.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/layout/activity_registration.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/layout/comments_layout.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/layout/fragment_blog_view.xml" value="0.1" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/layout/nav_header.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/layout/questions_retrived_layout.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/mdrim/StudioProjects/CSEIANAPP/app/src/main/res/menu/drawer_menu.xml" value="0.22447916666666667" />
