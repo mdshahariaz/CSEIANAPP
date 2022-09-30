@@ -30,6 +30,29 @@ public class shortNote extends AppCompatActivity {
         editText = findViewById(R.id.editTextTextPersonName);
         button = findViewById(R.id.button);
 
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            NotificationChannel channel=new NotificationChannel("Notification","My Notification", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager=getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+
+
+        button.setOnClickListener(new View.OnClickListener(){
+                                      @Override
+                                      public void onClick(View v) {
+                                          NotificationCompat.Builder builder=new NotificationCompat.Builder(shortNote.this,"Notification");
+                                          builder.setContentTitle("Title");
+                                          builder.setContentText("Simple Notification");
+                                          builder.setSmallIcon(R.drawable.img);
+                                          builder.setAutoCancel(true);
+
+                                          NotificationManagerCompat managerCompat=NotificationManagerCompat.from(shortNote.this);
+                                          managerCompat.notify(1, builder.build());
+                                          dataEntered = editText.getText().toString();
+                                          text.setText(dataEntered);
+                                      }
+                                  }
+        );
 
     }
 
