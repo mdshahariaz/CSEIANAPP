@@ -98,8 +98,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         recyclerView.setLayoutManager(linearLayoutManager);
 
 
-        //NavigationView navigationView=findViewById(R.id.nav_view);
-        //navigationView.setNavigationItemSelectedListener(this);
+        NavigationView navigationView=findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
 
 
@@ -119,7 +119,36 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
          */
-
+        switch_btn = findViewById(R.id.switchBtn);
+        sharedPreferences=getSharedPreferences("night",0);
+        Boolean booleanValue=sharedPreferences.getBoolean("night_mode",true);
+        if (booleanValue){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            switch_btn.setChecked(true);
+        }
+        else if (booleanValue){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            switch_btn.setChecked(false);
+        }
+        switch_btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    switch_btn.setChecked(true);
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.putBoolean("night_mode",true);
+                    editor.commit();
+                }
+                else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    switch_btn.setChecked(false);
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.putBoolean("night_mode",false);
+                    editor.commit();
+                }
+            }
+        });
 
         ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(
                 this,drawer_layout,toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
