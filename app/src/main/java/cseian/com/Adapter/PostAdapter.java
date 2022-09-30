@@ -54,7 +54,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
 
         final Post post=mPostList.get(position);
-         
+
         if (post.getQuestionimage()==null){
             holder.questionImage.setVisibility(View.GONE);
         }
