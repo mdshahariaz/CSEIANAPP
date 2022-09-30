@@ -21,13 +21,7 @@
             android:id="@+id/home_toolbar"
             android:elevation="4dp">
 
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/switchBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:backgroundTintMode="@color/red"
-                />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -39,6 +33,26 @@
 
         </androidx.appcompat.widget.Toolbar>
 
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/progress_circular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"/>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:fabSize="normal"
+                android:src="@drawable/ic_add"
+                android:backgroundTint="#888888"
+                android:layout_gravity="bottom|end"
+                android:id="@+id/fab"
+                />
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -52,15 +66,10 @@
                 android:id="@+id/frameLayout"
                 android:layout_below="@+id/blogLayout"/>
 
-
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
     </LinearLayout>
-
-
-
-
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
