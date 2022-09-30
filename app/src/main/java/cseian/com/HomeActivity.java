@@ -4,6 +4,7 @@ package cseian.com;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -38,6 +39,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import cseian.com.Adapter.PostAdapter;
 import cseian.com.Model.Post;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -215,6 +217,47 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        item.setChecked(true);
+        switch(item.getItemId()){
+
+            case R.id.home:
+                Intent homeintent= new Intent(HomeActivity.this,HomeActivity.class);
+                homeintent.putExtra("title","finance");
+                startActivity(homeintent);
+                break;
+
+            case R.id.nav_finance:
+                Intent intent= new Intent(HomeActivity.this,CategorySelectedActivity.class);
+                intent.putExtra("title","finance");
+                startActivity(intent);
+                break;
+
+            case R.id.nav_sports:
+                Intent intentS= new Intent(HomeActivity.this,CategorySelectedActivity.class);
+                intentS.putExtra("title","sports");
+                startActivity(intentS);
+                break;
+            case R.id.nav_food:
+                Intent intentF= new Intent(HomeActivity.this,CategorySelectedActivity.class);
+                intentF.putExtra("title","food");
+                startActivity(intentF);
+                break;
+            case R.id.blogview:
+                //Intent intentcseian= new Intent(HomeActivity.this,CSEianBlog.class);
+                //intentcseian.putExtra("title","food");
+                //startActivity(intentcseian);
+                replacefragment(new BlogView());break;
+            case R.id.calculator:
+                Intent intentcalculator= new Intent(HomeActivity.this,shortNote.class);
+                startActivity(intentcalculator);
+
+        }
+        drawer_layout.closeDrawer(GravityCompat.START);
+        return true;
+    }
 
     @Override
     public void onBackPressed() {

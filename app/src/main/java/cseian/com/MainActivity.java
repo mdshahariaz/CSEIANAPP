@@ -3,7 +3,6 @@ package cseian.com;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -26,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-
+        topAnimation= AnimationUtils.loadAnimation(this, R.anim.top_animation);
+        bottomAnimation= AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
         logo=findViewById(R.id.logo);
         title=findViewById(R.id.title);
@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
+                Intent intent= new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
             }
         },SPLASH);
     }
